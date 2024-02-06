@@ -43,7 +43,8 @@ header {
   text-decoration: none;
   padding: 10px;
 }
-#header a:hover {
+#header a:hover,
+.h1-call-to-action i:hover {
   color: #ff9800;
 }
 #header span {
@@ -61,20 +62,73 @@ header {
   display: none;
 }
 
+/* Galeria */
+#principals {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5% 0%;
+}
+.character {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  background-color: #3c3e44;
+  border-radius: 16px;
+  margin: 1%;
+}
+.characters-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px;
+}
+.characters-info p,
+h2 {
+  margin: 10px;
+}
+.character img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* H1s */
+.h1-call-to-action {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.h1-call-to-action h1 {
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 5.625rem;
+}
+.h1-call-to-action i {
+  font-size: 5rem;
+  color: #f5f5f5;
+  transition: all 0.1s ease 0s;
+}
+
 /* Footer  */
 .footer-info {
   display: grid;
   place-items: center;
   gap: 20px;
 }
-.footer-info p{
+.footer-info p {
   color: #f5f5f5;
   font-weight: 100;
   font-size: 18px;
 }
 .footer-info i {
   font-size: 24px;
-  color:#f5f5f5;
+  color: #f5f5f5;
   margin: 10px;
   transition: all 0.1s ease 0s;
 }
@@ -83,7 +137,7 @@ header {
 }
 .footer-info a:hover,
 .footer-info i:hover {
-  color:#ff9800;
+  color: #ff9800;
 }
 .icon-link {
   text-decoration: none;
@@ -119,5 +173,12 @@ picture img {
   }
   .footer-info a {
     margin: 10px;
+  }
+  .character {
+    width: fit-content;
+  }
+  .h1-call-to-action h1,.h1-call-to-action
+  i {
+    font-size: 3rem;
   }
 }
