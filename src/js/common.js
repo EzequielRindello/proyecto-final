@@ -1,9 +1,9 @@
 // header and footer utils
 export async function loadHeaderAndFooter() {
     try {
-        const headerTemplate = await loadTemplate("../../public/partials/header.html");
+        const headerTemplate = await loadTemplate("/partials/header.html");
         const headerElement = document.getElementById("header-dinamico");
-        const footerTemplate = await loadTemplate("../../public/partials/footer.html");
+        const footerTemplate = await loadTemplate("/public/partials/footer.html");
         const footerElement = document.getElementById("footer-dinamico");
 
         await Promise.all([
