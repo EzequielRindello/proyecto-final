@@ -8,7 +8,6 @@ export async function fetchPrincipals(url) {
     }
 
     const characters = await response.json();
-    console.log(characters);
     createCharacterGallery(characters);
 
   } catch (error) {
