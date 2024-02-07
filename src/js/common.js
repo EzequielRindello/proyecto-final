@@ -28,4 +28,35 @@ async function loadTemplate(path) {
     return template;
 }
 
+// filter characters funtions
+export async function fiterCharacterByNameAndStatus(characterName,characterStatus) {
+    try {
+        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${characterName}&status=${characterStatus}`);
+        if (!response.ok) {
+            throw new Error(console.warn(Error));
+        }
+
+        const list = await response.json();
+        console.log(list);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function fiterCharacterByName(characterName) {
+    try {
+        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${characterName}`);
+        if (!response.ok) {
+            throw new Error(console.warn(Error));
+        }
+
+        const list = await response.json();
+        console.log(list);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 // localStorage utils
