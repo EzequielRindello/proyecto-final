@@ -52,10 +52,11 @@ export async function fiterCharacterByName(characterName) {
         }
 
         const list = await response.json();
-        console.log(list);
+        return list;
 
     } catch (error) {
         console.error(error);
+        return null;
     }
 }
 
