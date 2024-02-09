@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: #202329;
@@ -115,6 +115,52 @@ h2 {
   transition: all 0.1s ease 0s;
 }
 
+/* Galeria Detallada */
+input {
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.search-btn {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+}
+form i {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease 0s;
+  margin: 10px;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+#buscador {
+  display: grid;
+  place-items: center;
+  margin: 4% 0%;
+}
+#buscador div {
+  width: 60%;
+}
+.characters-full-info,.characters-full-info h2 {
+  text-align: left;
+  margin: 0;
+}
+.characters-full-info p {
+  margin-top: 10px;
+}
+.characters-full-info a {
+  color: #f5f5f5;
+  font-style: italic;
+}
+
 /* Footer  */
 .footer-info {
   display: grid;
@@ -136,7 +182,8 @@ h2 {
   margin: 30px;
 }
 .footer-info a:hover,
-.footer-info i:hover {
+.footer-info i:hover,
+form i:hover {
   color: #ff9800;
 }
 .icon-link {
@@ -148,6 +195,35 @@ picture img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5f5f5;
+  color: #202329;
+  padding: 20px;
+  border: 1px solid #ff9800;
+  box-shadow: 0px 0px 5px #ff9800;
+  border-radius: 5px;
+  z-index: 999;
+}
+.popup p{
+  margin: 20px;
+}
+.popup a {
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 20px;
+}
+main.popup-active,
+footer.popup-active,
+header.popup-active {
+  filter: blur(5px);
+  pointer-events: none;
 }
 
 /* Media  */
@@ -165,7 +241,8 @@ picture img {
     border-radius: 16px;
     background-color: #ff9800;
   }
-  .logo, .character img {
+  .logo,
+  .character img {
     width: 150px;
   }
   #header a {
@@ -177,8 +254,14 @@ picture img {
   .character {
     width: fit-content;
   }
-  .h1-call-to-action h1,.h1-call-to-action
-  i {
+  .h1-call-to-action h1,
+  .h1-call-to-action i {
     font-size: 2rem;
+  }
+  .popup {
+    width: 80%;
+  }
+  #buscador div {
+    width: 100%;
   }
 }

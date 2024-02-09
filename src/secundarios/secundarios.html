@@ -10,9 +10,28 @@
   <body>
     <header id="header-dinamico"></header>
     <main>
-      <h1>Secundarios page</h1>
-      <a href="/index.html">return</a>
+      <div class="h1-call-to-action">
+        <a href="/index.html"><i class="bi bi-arrow-left-square"></i></a>
+        <h1>search</h1>
+      </div>
+      <div>
+        <form id="search-form" action="javascript:void(0);">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="search characters by name..."
+            required
+            minlength="1"
+          />
+          <button class="search-btn" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+          <i id="info-alert" class="bi bi-exclamation-circle"></i>
+        </form>
+      </div>
+      <div id="buscador"></div>
     </main>
     <footer id="footer-dinamico"></footer>
+    <script type="module" src="/src/js/secundarios.js"></script>
   </body>
 </html>
