@@ -9,9 +9,10 @@ document.getElementById("search-form").addEventListener("submit", async function
     const characterName = document.getElementById("search-input").value;
     const characterList = await fiterCharacterByName(characterName);
     try {
-        infoDiv.appendChild(statusSpecies);
+        renderSearch(characterList.results);
     } catch (error) {
-        console.warn("Not a valid input")
+        console.warn("Not a valid input");
+        alert("Error. Enter a valid character!");
     }
 });
 
