@@ -51,7 +51,7 @@ export function renderSearch(characterslist) {
 }
 
 export function infoAlert() {
-    fetch("../../public/json/alerts.json")
+    fetch("/json/alerts.json")
         .then(response => response.json())
         .then(data => {
             // crear el div emergente
