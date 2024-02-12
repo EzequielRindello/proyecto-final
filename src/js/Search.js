@@ -1,3 +1,4 @@
+import {addToFavorites} from "./common.js";
 // render funtions
 export function renderSearch(characterslist) {
     const searchDiv = document.getElementById("buscador");
@@ -6,6 +7,14 @@ export function renderSearch(characterslist) {
     characterslist.forEach(characterslist => {
         const characterDiv = document.createElement("div");
         characterDiv.classList.add("character");
+
+        // favorites btn 
+        const favoritesBtn = document.createElement("button");
+        favoritesBtn.classList.add("favorites-btn");
+        favoritesBtn.innerHTML = `<i class="bi bi-star-fill"></i>`;
+        favoritesBtn.onclick = function() {
+            addToFavorites(characterslist);
+        };
 
         const imgageDiv = document.createElement("div")
         const imageElement = document.createElement("img");
@@ -45,6 +54,7 @@ export function renderSearch(characterslist) {
 
         characterDiv.appendChild(imgageDiv);
         characterDiv.appendChild(infoDiv);
+        characterDiv.appendChild(favoritesBtn);
 
         searchDiv.appendChild(characterDiv);
     });

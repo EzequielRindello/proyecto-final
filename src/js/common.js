@@ -61,3 +61,6 @@ export async function fiterCharacterByName(characterName) {
 }
 
 // localStorage utils
+export function addToFavorites(object){
+    console.log(object);
+}
