@@ -310,6 +310,16 @@ header.popup-active {
   #main-characters-info div {
     width: 100%;
   }
+  .favorite-container img {
+    border-radius: initial;
+    filter: none;
+    -webkit-filter: none;
+  }
+  .favorite-container img:hover {
+    filter: none;
+    -webkit-filter: none;
+    transition: none; /* Remueve la transición en el hover */
+  }
 }
 
 @media (max-width: 540px) {
