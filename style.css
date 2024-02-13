@@ -311,7 +311,6 @@ header.popup-active {
     width: 100%;
   }
   .favorite-container img {
-    border-radius: initial;
     filter: none;
     -webkit-filter: none;
   }
