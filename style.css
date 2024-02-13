@@ -70,6 +70,36 @@ header {
   flex-wrap: wrap;
   margin: 5% 0%;
 }
+#favorites-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 5% 5%;
+}
+.favorite-container img {
+  border-radius: 5px;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+.favorite-container img:hover {
+  filter: grayscale(0%);
+  filter: gray;
+  -webkit-filter: grayscale(0%);
+  filter: none;
+  transition: 1s ease;
+}
+.fav-character {
+  background-color: #3c3e44;
+  border-radius: 5px;
+}
+.fav-character-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 7px;
+}
 .character {
   position: relative;
   display: flex;
@@ -195,7 +225,8 @@ form {
 form i:hover,
 h2:hover,
 p:hover,
-.favorites-btn:hover {
+.favorites-btn:hover,
+.favorite-container i:hover {
   color: #ff9800;
   cursor: pointer;
 }
@@ -275,12 +306,14 @@ header.popup-active {
   .popup {
     width: 80%;
   }
-  #buscador div {
+  #buscador div,
+  #main-characters-info div {
     width: 100%;
   }
 }
 
 @media (max-width: 540px) {
+  .character,
   .character {
     width: 100%;
   }
