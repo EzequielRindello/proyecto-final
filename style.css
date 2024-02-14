@@ -226,7 +226,7 @@ form i:hover,
 h2:hover,
 p:hover,
 .favorites-btn:hover,
-.favorite-container i:hover {
+.favorite-container i:hover,.popup a:hover {
   color: #ff9800;
   cursor: pointer;
 }
@@ -257,6 +257,9 @@ picture img {
 }
 .popup p {
   margin: 20px;
+}
+.popup p:hover{
+  color: #202329;
 }
 .popup a {
   text-decoration: underline;
@@ -317,10 +320,9 @@ header.popup-active {
   .favorite-container img:hover {
     filter: none;
     -webkit-filter: none;
-    transition: none; /* Remueve la transición en el hover */
+    transition: none;
   }
 }
-
 @media (max-width: 540px) {
   .character,
   .character {
