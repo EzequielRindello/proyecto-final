@@ -1,6 +1,7 @@
 import { loadHeaderAndFooter, fiterCharacterByName } from "./common.js";
-import { renderSearch} from "./Search.js"
+import { renderSearch } from "./Search.js"
 import { infoAlert } from "./Alerts.js";
+import { displayRandom } from "./GetRamdom.js";
 
 loadHeaderAndFooter();
 
@@ -20,3 +21,7 @@ document.getElementById("search-form").addEventListener("submit", async function
 document.getElementById("info-alert").addEventListener("click", function () {
   infoAlert();
 });
+
+document.getElementById("random").addEventListener("click", () => {
+  displayRandom();
+})
