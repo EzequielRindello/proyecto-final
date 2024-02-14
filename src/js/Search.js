@@ -20,6 +20,7 @@ export function renderSearch(characterslist) {
 		const imageElement = document.createElement("img");
 		imageElement.src = characterslist.image;
 		imageElement.alt = characterslist.name;
+		imageElement.loading = "lazy";
 		imgageDiv.appendChild(imageElement);
 
 		const infoDiv = document.createElement("div")
@@ -58,40 +59,4 @@ export function renderSearch(characterslist) {
 
 		searchDiv.appendChild(characterDiv);
 	});
-}
-
-export function infoAlert() {
-	fetch("/json/alerts.json")
-		.then(response => response.json())
-		.then(data => {
-			// crear el div emergente
-			const popupDiv = document.createElement("div");
-			popupDiv.classList.add("popup");
-
-			// agregar el mensaje al div emergente
-			const messageParagraph = document.createElement("p");
-			messageParagraph.textContent = data.info;
-			popupDiv.appendChild(messageParagraph);
-
-			// agregar un botón para cerrar el div emergente
-			const closeButton = document.createElement("a");
-			closeButton.textContent = "Close";
-			closeButton.addEventListener("click", () => {
-				popupDiv.remove();
-				document.querySelector("main").classList.remove("popup-active");
-				document.querySelector("header").classList.remove("popup-active");
-				document.querySelector("footer").classList.remove("popup-active");
-			});
-			popupDiv.appendChild(closeButton);
-
-			// agregar el div emergente al cuerpo del documento
-			document.body.appendChild(popupDiv);
-			document.querySelector("main").classList.add("popup-active");
-			document.querySelector("header").classList.add("popup-active");
-			document.querySelector("footer").classList.add("popup-active");
-
-		})
-		.catch(error => {
-			console.error("Error from json:", error);
-		});
 }

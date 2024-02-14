@@ -26,6 +26,7 @@ function createCharacterGallery(characters) {
     const imageElement = document.createElement("img");
     imageElement.src = character.image;
     imageElement.alt = character.name;
+    imageElement.loading = "lazy";
     imgageDiv.appendChild(imageElement);
 
     const infoDiv = document.createElement("div")

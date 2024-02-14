@@ -1,4 +1,4 @@
-import {saveFavorites} from "./common.js";
+import { saveFavorites } from "./common.js";
 
 export function displayFavoritesGalery(favoritesSaved) {
 	const galeryDiv = document.getElementById("favorites-div");
@@ -14,6 +14,8 @@ export function displayFavoritesGalery(favoritesSaved) {
 		const imageDiv = document.createElement("div");
 		const imageElement = document.createElement("img");
 		imageElement.src = favorite.image;
+		imageElement.alt = favorite.name;
+		imageElement.loading = "lazy";
 
 		const favCharacterInfo = document.createElement("div");
 		favCharacterInfo.classList.add("fav-character-info");
@@ -25,7 +27,7 @@ export function displayFavoritesGalery(favoritesSaved) {
 		removeButton.innerHTML = `<i class="bi bi-x-lg"></i>`;
 		removeButton.onclick = function () {
 			removeFavorite(favorite, favoritesSaved);
-			saveFavorites(favoritesSaved);
+			saveFavorites(favoritesSaved); // lo guardo una vez modificado
 		};
 
 		imageDiv.appendChild(imageElement);
@@ -43,17 +45,18 @@ export function displayFavoritesGalery(favoritesSaved) {
 
 
 export function removeFavorite(object, favoritesSaved) {
-	// buscar el índice del objeto en la lista
+	// buscar el indice del objeto en la lista
+	// si el objeto se encuentra retorna true si no se encuentra retorna -1
 	const index = favoritesSaved.findIndex(favorite => favorite.id === object.id);
 
 	//si existe, eliminar
-	if (index !== -1) {
+	if (index !== -1) { // si el index es diferente de -1 significa que el objeto fue encontrado en la lista.
 		favoritesSaved.splice(index, 1);
 		alert(`${object.name} has been removed!`);
 	} else {
 		console.warn(`${object.name} was not found in favorites!`);
 	}
 
-	// Actualizar la visualización de favoritos
+	// actualizar la visualización de favoritos
 	displayFavoritesGalery(favoritesSaved);
 }

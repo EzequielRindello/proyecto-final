@@ -1,5 +1,6 @@
 import { loadHeaderAndFooter, fiterCharacterByName } from "./common.js";
-import { renderSearch, infoAlert } from "./Search.js"
+import { renderSearch} from "./Search.js"
+import { infoAlert } from "./Alerts.js";
 
 loadHeaderAndFooter();
 

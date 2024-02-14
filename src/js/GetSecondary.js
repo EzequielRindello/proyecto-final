@@ -24,6 +24,7 @@ function secondaryCharactersGallery(secondaryCharacters) {
 		const imageElement = document.createElement("img");
 		imageElement.src = secondaryCharacters.image;
 		imageElement.alt = secondaryCharacters.name;
+		imageElement.loading = "lazy";
 		imgageDiv.appendChild(imageElement);
 
 		const infoDiv = document.createElement("div")
