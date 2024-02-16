@@ -1,4 +1,11 @@
 {
   "info": "Hi! If you don't know the characters, you can try using friends' names or keywords like: Jr, Sr, Dr, President , etc. Have fun!",
-  "footer": "Hi! This is the final project of WDD 330. This project aims to demonstrate what was learned in the course and was done from scratch. I invite you to review the repository to learn more about the base code and visit my Linkedin to get in touch, Greetings!"
+  "footer": "Hi! This is the final project of WDD 330. This project aims to demonstrate what was learned in the course and was done from scratch. I invite you to review the repository to learn more about the base code and visit my Linkedin to get in touch, Greetings!",
+  "first": {
+    "greetings": "Welcome!",
+    "msg": "This is a website designed to see and learn simple facts about the characters of the series 'Rick and Morty'. It is divided into three simple parts.",
+    "part1": "1) Main Characters: where you can see the main characters",
+    "part2": "2) Search Others Characters: where you can search for characters by name or randomly",
+    "part3": "3) Favorites: where you can see a gallery with the characters you decide to save"
+  }
 }

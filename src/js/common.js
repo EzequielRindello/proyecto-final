@@ -61,6 +61,17 @@ export async function fiterCharacterByName(characterName) {
 }
 
 // localStorage utils
+
+export function setFirstVisitLocalStorage() {
+  if (!localStorage.getItem("first-visit")) {
+    localStorage.setItem("first-visit", new Date().toISOString());
+  }
+}
+
+export function getFirstVisitLocalStorage() {
+  return localStorage.getItem("first-visit");
+}
+
 export function getFavorites() {
   let favorites = localStorage.getItem("favorites");
   if (!favorites) {
