@@ -308,6 +308,7 @@ header.popup-active {
   }
   .popup {
     width: 80%;
+    top: 50%;
   }
   #buscador div,
   #main-characters-info div {
