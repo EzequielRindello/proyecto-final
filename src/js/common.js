@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 // header and footer utils
 export async function loadHeaderAndFooter() {
   try {
@@ -92,13 +93,22 @@ export function addToFavorites(object) {
   const isAlreadyFavorite = favorites.some(favorite => favorite.id === object.id);
 
   if (isAlreadyFavorite) {
-    alert(`${object.name} is already in favorites!`);
+    Swal.fire({
+      title: 'Warning!',
+      text: `${object.name} is already in favorites!`,
+      icon: 'error',
+      confirmButtonText: 'Aww, geez!'
+    })
     return; // salir de la función si el objeto ya está en la lista de favoritos
   }
 
   // si el objeto no está en la lista de favoritos, agregarlo
   favorites.push(object);
   saveFavorites(favorites);
-
-  alert(`${object.name} has been added to favorites!`);
+  Swal.fire({
+    title: 'And that\'s the wayyyyy the news goes!',
+    text: `${object.name} has been added to favorites!`,
+    icon: 'success',
+    confirmButtonText: 'Get Schwifty!'
+  })
 }

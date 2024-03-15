@@ -2,6 +2,7 @@ import { loadHeaderAndFooter, fiterCharacterByName } from "./common.js";
 import { renderSearch } from "./Search.js"
 import { infoAlert } from "./Alerts.js";
 import { displayRandom } from "./GetRamdom.js";
+import Swal from 'sweetalert2'
 
 loadHeaderAndFooter();
 
@@ -14,7 +15,12 @@ document.getElementById("search-form").addEventListener("submit", async function
     renderSearch(characterList.results);
   } catch (error) {
     console.warn("Not a valid input");
-    alert("Error. Enter a valid character!");
+    Swal.fire({
+      title: 'Warning!',
+      text: `Error. Enter a valid character!`,
+      icon: 'error',
+      confirmButtonText: 'Aww, geez!'
+    })
   }
 });
 

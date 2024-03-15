@@ -1,4 +1,5 @@
 import { saveFavorites } from "./common.js";
+import Swal from 'sweetalert2'
 
 export function displayFavoritesGalery(favoritesSaved) {
 	const galeryDiv = document.getElementById("favorites-div");
@@ -52,7 +53,12 @@ export function removeFavorite(object, favoritesSaved) {
 	//si existe, eliminar
 	if (index !== -1) { // si el index es diferente de -1 significa que el objeto fue encontrado en la lista.
 		favoritesSaved.splice(index, 1);
-		alert(`${object.name} has been removed!`);
+		Swal.fire({
+			title: 'Nobody exists on purpose, nobody belongs anywhere, everybody\'s gonna die. Come watch TV.',
+			text: `${object.name} has been removed!`,
+			icon: 'success',
+			confirmButtonText: 'Get Schwifty!'
+		  })
 	} else {
 		console.warn(`${object.name} was not found in favorites!`);
 	}
